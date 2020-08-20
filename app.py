@@ -43,7 +43,8 @@ def param():
 						'login_status': 'succcess'
 					}
 					return jsonify(result_json)
-				except Exception:
+				except Exception as e:
+					print("error >> ", e)
 					result_json = {
 						'login_status': 'failed'
 					}
