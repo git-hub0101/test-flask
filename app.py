@@ -51,11 +51,23 @@ def param():
 					return jsonify(result_json)
 				
 			else:
-				return "Access token must not be empty",202
+				result_json = {
+						'login_status': 'failed'
+					}
+				return jsonify(result_json)
+
 		else:
-			return 'Access token not found',203
+			result_json = {
+				'login_status': 'failed'
+				}
+			return jsonify(result_json)
+
 	else:
-		return 'Mthod not allowed',405
+		result_json = {
+			'login_status': 'failed'
+			}
+		return jsonify(result_json)
+
 
 
 if __name__ == '__main__':
